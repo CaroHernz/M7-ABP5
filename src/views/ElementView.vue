@@ -1,6 +1,5 @@
 <template>
   <div class="element-view">
-    <!-- Navbar -->
     <el-header class="element-header">
       <el-menu mode="horizontal" background-color="#409EFF" text-color="#fff" active-text-color="#ffd04b">
         <el-menu-item index="1" class="element-brand">
@@ -30,7 +29,6 @@
       </el-menu>
     </el-header>
 
-    <!-- Contenido Principal -->
     <el-main>
       <div class="element-container">
         <!-- Header -->
@@ -45,7 +43,6 @@
           <p>Como sucesor de Element UI, Element Plus aprovecha la Composition API de Vue 3 y ofrece mejor soporte para TypeScript, mejor rendimiento y una estética más moderna.</p>
         </el-card>
 
-        <!-- Tabla Ventajas/Desventajas -->
         <el-card class="element-card">
           <template #header>
             <h2>Ventajas y Desventajas</h2>
@@ -70,7 +67,6 @@
           </el-table>
         </el-card>
 
-        <!-- Alertas y Modal -->
         <el-card class="element-card">
           <template #header>
             <div style="display: flex; align-items: center">
@@ -79,7 +75,6 @@
             </div>
           </template>
 
-          <!-- Alertas -->
           <div style="margin-bottom: 16px">
             <el-alert
               title="¡Éxito!"
@@ -114,7 +109,6 @@
             />
           </div>
 
-          <!-- Botones -->
           <div>
             <el-button type="success" @click="showAlert">
               <el-icon><Check /></el-icon>
@@ -179,7 +173,6 @@
             </el-card>
           </el-col>
 
-          <!-- Formulario -->
           <el-col :span="12">
             <el-card class="element-card">
               <template #header>
@@ -229,7 +222,6 @@
       </div>
     </el-main>
 
-    <!-- Modal -->
     <el-dialog v-model="showModal" title="Modal de Element Plus" width="600px">
       <p>Este es un modal de ejemplo usando Element Plus. Puedes agregar cualquier contenido aquí.</p>
       <el-form :model="modalData" style="margin-top: 16px">
@@ -252,7 +244,6 @@ import { ElHeader,ElMenu,ElMenuItem,ElButton,ElButtonGroup,ElMain,ElCard,ElTable
 } from 'element-plus'
 import { Star, User, Plus, Check, Close, Bell, View } from '@element-plus/icons-vue'
 
-// Estado
 const showModal = ref(false)
 const form = reactive({
   name: '',
@@ -263,7 +254,6 @@ const form = reactive({
 })
 const modalData = reactive({ name: '' })
 
-// Datos
 const inquiryOptions = [
   { value: 'support', label: 'Soporte técnico' },
   { value: 'sales', label: 'Ventas' },
@@ -289,7 +279,6 @@ const tableData = [
   }
 ]
 
-// Métodos
 const showAlert = () => {
   ElMessage.success('¡Esta es una alerta JavaScript usando Element Plus!')
 }

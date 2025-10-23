@@ -138,7 +138,8 @@
           </BCard>
         </BCol>
       </BRow>
-
+      
+      <!-- Evaluación de Rendimiento -->
       <BRow class="my-5">
         <BCol md="6" class="mb-5">
           <BCard class="h-100 shadow">
@@ -171,7 +172,6 @@
           </BCard>
         </BCol>
 
-        <!-- Formulario -->
         <BCol md="6">
           <BCard class="shadow">
             <BCardBody>
@@ -258,7 +258,6 @@ const modalData = reactive({
   name: ''
 })
 
-// Opciones del formulario
 const inquiryOptions = [
   { value: null, text: 'Selecciona una opción' },
   { value: 'support', text: 'Soporte técnico' },
@@ -299,20 +298,17 @@ const showToast = () => {
   toastVariant.value = 'info'
   toastShow.value = true
 
-  // Auto-ocultar después de 3 segundos
   setTimeout(() => {
     toastShow.value = false
   }, 3000)
 }
 
 const submitForm = () => {
-  // Mostrar toast de éxito
   toastTitle.value = '¡Éxito!'
   toastMessage.value = `Formulario enviado correctamente:\nNombre: ${form.name}\nEmail: ${form.email}`
   toastVariant.value = 'success'
   toastShow.value = true
 
-  // Resetear formulario
   Object.assign(form, {
     name: '',
     email: '',
@@ -321,7 +317,6 @@ const submitForm = () => {
     newsletter: false
   })
 
-  // Auto-ocultar después de 4 segundos
   setTimeout(() => {
     toastShow.value = false
   }, 4000)
@@ -329,7 +324,6 @@ const submitForm = () => {
 
 const saveModal = () => {
   if (modalData.name) {
-    // Mostrar toast de éxito
     toastTitle.value = 'Guardado'
     toastMessage.value = `Datos guardados: ${modalData.name}`
     toastVariant.value = 'success'
@@ -338,18 +332,15 @@ const saveModal = () => {
     showModal.value = false
     modalData.name = ''
 
-    // Auto-ocultar después de 3 segundos
     setTimeout(() => {
       toastShow.value = false
     }, 3000)
   } else {
-    // Mostrar toast de error
     toastTitle.value = 'Error'
     toastMessage.value = 'Por favor ingresa un nombre'
     toastVariant.value = 'danger'
     toastShow.value = true
 
-    // Auto-ocultar después de 3 segundos
     setTimeout(() => {
       toastShow.value = false
     }, 3000)

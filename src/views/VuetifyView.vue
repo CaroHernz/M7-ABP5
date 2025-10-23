@@ -32,7 +32,6 @@
             </v-card-text>
           </v-card>
 
-          <!-- Tabla Ventajas/Desventajas Actualizada -->
           <v-card class="mb-8" elevation="2">
             <v-card-title class="text-h4">Ventajas y Desventajas</v-card-title>
             <v-card-text>
@@ -72,7 +71,7 @@
                 </v-card-title>
                 <v-card-text>
                   <v-col cols="12" class="mb-4">
-                    <!-- Alerta de éxito -->
+
                     <v-alert type="success" class="mb-3">
                       <template v-slot:prepend>
                         <v-icon class="me-2">mdi-check-circle</v-icon>
@@ -83,7 +82,6 @@
                       </div>
                     </v-alert>
 
-                    <!-- Alerta informativa desechable -->
                     <v-alert type="info" variant="tonal" dismissible class="mb-3">
                       <template v-slot:prepend>
                         <v-icon class="me-2">mdi-information</v-icon>
@@ -91,7 +89,6 @@
                       Alerta informativa que se puede cerrar.
                     </v-alert>
 
-                    <!-- Alerta de advertencia -->
                     <v-alert type="warning" class="mb-3">
                       <template v-slot:prepend>
                         <v-icon class="me-2">mdi-alert</v-icon>
@@ -99,7 +96,6 @@
                       Alerta de advertencia importante.
                     </v-alert>
 
-                    <!-- Alerta de error -->
                     <v-alert type="error" variant="outlined" class="mb-3">
                       <template v-slot:prepend>
                         <v-icon class="me-2">mdi-alert-circle</v-icon>
@@ -173,7 +169,6 @@
               </v-card>
             </v-col>
 
-            <!-- Formulario -->
             <v-col cols="12" md="6">
               <v-card elevation="2">
                 <v-card-title>Formulario de Contacto</v-card-title>
@@ -257,7 +252,6 @@
       </v-card>
     </v-dialog>
 
-    <!-- Diálogo de Confirmación -->
     <v-dialog v-model="showDialog" max-width="400px">
       <v-card>
         <v-card-title class="text-h6">
@@ -279,7 +273,6 @@
       </v-card>
     </v-dialog>
 
-    <!-- Snackbar (similar a Toast) -->
     <v-snackbar v-model="showSnackbar" :timeout="3000" color="success">
       <v-icon class="me-2">mdi-check</v-icon>
       ¡Acción completada exitosamente!
@@ -338,7 +331,6 @@ const tableData = [
   }
 ]
 
-// Métodos
 const submitForm = () => {
   alert('Formulario enviado: ' + JSON.stringify(form))
 }
@@ -372,7 +364,6 @@ const confirmAction = () => {
   position: relative !important;
 }
 
-/* Mejoras para la tabla de ventajas/desventajas */
 .d-flex.align-start {
   align-items: flex-start;
 }

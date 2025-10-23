@@ -64,7 +64,6 @@
           </div>
         </div>
 
-        <!-- Tabla Ventajas/Desventajas -->
         <div class="card mb-6">
           <div class="card-content">
             <h3 class="title is-3">Ventajas y Desventajas</h3>
@@ -104,7 +103,7 @@
             </div>
           </div>
         </div>
-<div class="card mt-6">
+        <div class="card mt-6">
           <div class="card-content">
             <h3 class="title is-3">
               <span class="icon mr-2">
@@ -113,7 +112,6 @@
               Alertas y Modal
             </h3>
 
-            <!-- Alertas Bulma -->
             <div class="columns">
               <div class="column">
                 <article class="message is-success">
@@ -155,7 +153,6 @@
               </div>
             </div>
 
-            <!-- Botones de Control -->
             <div class="buttons">
               <button class="button is-success" @click="showAlert">
                 <span class="icon">
@@ -219,7 +216,6 @@
             </div>
           </div>
 
-          <!-- Formulario -->
           <div class="column is-half">
             <div class="card">
               <div class="card-content">
@@ -281,13 +277,9 @@
             </div>
           </div>
         </div>
-
-        <!-- Alertas y Modal -->
-        
       </div>
     </section>
 
-    <!-- Modal Bulma (usando CSS classes) -->
     <div class="modal" :class="{ 'is-active': showModal }">
       <div class="modal-background" @click="showModal = false"></div>
       <div class="modal-card" style="width: 640px;">
@@ -312,7 +304,6 @@
       </div>
     </div>
 
-    <!-- Notificación (Toast) usando Bulma -->
     <div class="notification is-info" :class="{ 'is-hidden': !showNotificationActive }" 
          style="position: fixed; top: 20px; right: 20px; z-index: 1000; max-width: 300px;">
       <button class="delete" @click="showNotificationActive = false"></button>
@@ -334,7 +325,6 @@
 <script setup>
 import { ref, reactive } from 'vue'
 
-// Estado reactivo
 const showNav = ref(false)
 const showModal = ref(false)
 const showNotificationActive = ref(false)
@@ -351,14 +341,12 @@ const modalData = reactive({
   name: ''
 })
 
-// Opciones del formulario
 const inquiryOptions = [
   { value: 'support', text: 'Soporte técnico' },
   { value: 'sales', text: 'Ventas' },
   { value: 'general', text: 'Consulta general' }
 ]
 
-// Datos de ventajas/desventajas para Buefy
 const tableData = [
   {
     ventaja: 'Rendimiento superior en la mayoría de las métricas evaluadas (incluyendo First Contentful Paint, Speed Index y Total Blocking Time) en comparación con Vuetify y BootstrapVue.',
@@ -374,19 +362,16 @@ const tableData = [
   }
 ]
 
-// Métodos
 const showAlert = () => {
   alert('¡Esta es una alerta JavaScript usando Buefy!')
 }
 
 const hideAlert = (type) => {
-  // Lógica para ocultar alertas específicas si es necesario
   console.log(`Ocultar alerta: ${type}`)
 }
 
 const showNotification = () => {
   showNotificationActive.value = true
-  // Auto-ocultar después de 3 segundos
   setTimeout(() => {
     showNotificationActive.value = false
   }, 3000)
@@ -395,7 +380,6 @@ const showNotification = () => {
 const submitForm = () => {
   alert(`Formulario enviado correctamente:\n\nNombre: ${form.name}\nEmail: ${form.email}\nConsulta: ${form.inquiry}`)
   
-  // Resetear formulario
   Object.assign(form, {
     name: '',
     email: '',
@@ -444,12 +428,10 @@ a {
   overflow-x: auto;
 }
 
-/* Estilos para el modal personalizado */
 .modal-card {
   margin: 0 auto;
 }
 
-/* Estilos para la notificación */
 .notification {
   transition: all 0.3s ease;
 }
